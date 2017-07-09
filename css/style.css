@@ -1,0 +1,618 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body
+{
+  font-family: Roboto, sans-serif;
+
+  background: #474553;
+  background: -moz-radial-gradient(center, ellipse cover, #474553 0%, #292830 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, #474553 0%,#292830 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, #474553 0%,#292830 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#474553', endColorstr='#292830',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+.container
+{
+  position: relative;
+  width: 480px;
+  margin: 0px auto;
+  display: inline-block;
+  left:50%;
+  margin-left: -240px;
+}
+
+img.refer
+{
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+}
+
+div.control-1
+{
+  position: relative;
+  width: 250px;
+  height: 250px;
+  top: 0px;
+  margin-top: 30px;
+  margin-left: 120px;
+  border-radius: 100%;
+  border: 7px solid #19191b;
+  border-bottom: 5px solid transparent;
+  
+  box-shadow: 0 -1px 2px -1px rgba(255,255,255,0.2),
+              inset 0 1px 2px -1px rgba(255,255,255,0.2);
+}
+
+div.control-1:before
+{
+  position: absolute;
+  content: '-';
+  width: 27px;
+  height: 27px;
+  display: inline-block;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 24px;
+  font-size: 58px;
+  font-weight: 300;
+  color: #05d4f4;
+  text-shadow: 0 0 10px #05d4f4;
+  left: 0;
+  bottom: 0;
+  margin-left: 37.5px;
+  margin-bottom: 8.5px;
+
+  box-shadow: inset 0 0 25px rgba(0,0,0,1);
+}
+
+div.control-1:after
+{
+  position: absolute;
+  content: '+';
+  width: 27px;
+  height: 27px;
+  display: inline-block;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 26px;
+  font-size: 28px;
+  font-weight: 400;
+  color: #05d4f4;
+  text-shadow: 0 0 10px #05d4f4;
+  right: 0;
+  bottom: 0;
+  margin-right: 37.5px;
+  margin-bottom: 8.5px;
+
+  box-shadow: inset 0 0 25px rgba(0,0,0,1);
+}
+
+div.control-1 span.vol-level
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+  transform: rotate(38deg);
+}
+
+div.control-1 span.vol-level:before
+{
+  position: relative;
+  content: '';
+  width: 10px;
+  height: 6px;
+  display: inline-block;
+  background: #05d4f4;
+  top: -16px;
+  border-radius: 10px;
+
+  box-shadow: -3px 0 3px #05d4f4,
+              3px 0 3px #05d4f4,
+              inset 0 0 15px rgba(255,255,255,0.7);
+}
+
+div.volume-control
+{
+  position: relative;
+  width: 220px;
+  height: 220px;
+  background: #05d4f4;
+  border-radius: 100%;
+  text-align: center;
+  margin-left: 15px;
+  top: 15px;
+
+  box-shadow: inset 0 2px 3px 3px rgba(0,0,0,0.9),
+              0 0 20px rgba(5,212,244,0.5),
+              0 0 5px rgba(0,0,0,0.0);
+}
+
+div.volume-control .panel
+{
+  position: absolute;
+  content: '';
+  width: 90%;
+  height: 90%;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  border-radius: 100%;
+  margin-top: 5%;
+  margin-left: 5%;
+  background: #3e3c49;
+  overflow: hidden;
+
+  box-shadow: inset 0 0 150px rgba(0,0,0,0.3),
+              inset -15px -15px 20px 5px rgba(0,0,0,0.2),
+              inset 15px 15px 10px 5px rgba(0,0,0,0.15),
+              inset 0 0px 2px 4px rgba(0,0,0,0.9),
+              inset 0 0.5px 2px 5px rgba(255,255,255,0.9);
+}
+
+div.volume-control .knob
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 55%;
+  height: 55%;
+  display: inline-block;
+  border-radius: 100%;
+  margin-top: 22.5%;
+  margin-left: 22.5%;
+  background: #42404d;
+  overflow: hidden;
+
+  box-shadow: inset 0px 5px 2px -2px rgba(255,255,255,0.3),
+              inset 0px -5px 2px -2px rgba(255,255,255,0.03),
+              0 -5px 5px -2px rgba(0,0,0,0.3),
+              0 30px 10px -2px rgba(0,0,0,0.4),
+              0 50px 55px 10px rgba(0,0,0,0.7),
+              inset 0 0 200px rgba(0,0,0,0.55),
+              inset 0 15px 15px 0 rgba(0,0,0,0.15),
+              inset 0 -35px 25px 0 rgba(255,255,255,0.05),
+              0 -7px 15px -2px rgba(255,255,255,0.05);
+}
+
+div.volume-control .knob:before
+{
+  position: absolute;
+  content: '';
+  width: 27px;
+  height: 27px;
+  display: inline-block;
+  border-radius: 100%;
+  right: 0;
+  margin-top: 20px;
+  margin-right: 25px;
+
+  box-shadow: inset 0 0 45px rgba(0,0,0,0.4),
+              inset -2px 2px 10px rgba(0,0,0,0.5),
+              -0.5px 1px 1px rgba(255,255,255,0.1);
+}
+
+div.volume-control .knob img
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: -50%;
+  margin-top: -50%;
+  opacity: 0.09;
+}
+
+div.volume-control .panel img
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+div.control-2
+{
+  position: relative;
+  margin-top: 70px;
+  margin-left: 146px;
+}
+
+div.control-2 span.eq
+{
+  position: relative;
+  width: 40px;
+  height: 200px;
+  display: inline-block;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.05);
+  margin-right: 45px;
+  box-shadow: inset 0 0 65px rgba(0,0,0,0.4),
+              inset 0 10px 15px rgba(0,0,0,0.3),
+              inset 0 -10px 15px rgba(0,0,0,0.3),
+              0 0 5px rgba(0,0,0,0.7);
+}
+
+div.control-2 span.eq:before,
+div.control-2 span.eq:after
+{
+  position: absolute;
+  content: '';
+  width: 10px;
+  display: inline-block;
+  
+  top: 50%;
+  margin-top: -80px;
+  left: 50%;
+  margin-left: -5px;
+  border-radius: 100px;
+}
+
+div.control-2 span.eq:before
+{
+  z-index: 8;
+  height: 160px;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.7),
+              inset 0 7px 10px -2px rgba(0,0,0,0.5),
+              inset 0 -7px 10px -2px rgba(0,0,0,0.5);
+}
+
+div.control-2 span.eq:after
+{
+  z-index: 9;
+  height: 160px;
+  background: #05d4f4;
+
+  box-shadow: inset 0 0 25px rgba(255,255,255,0.5),
+              0 0 10px #05d4f4;
+}
+
+span.eq span.eq-level
+{
+  position: absolute;
+  width: 50px;
+  height: 75px;
+  display: inline-block;
+  background: #373542;
+  left: 0;
+  margin-left: -5px;
+  margin-top: 0px;
+  border-radius: 100px;
+  overflow: hidden;
+  z-index: 10;
+
+  box-shadow: inset 0 5px 5px -3px rgba(255,255,255,0.4),
+              inset 0 -8px 8px -3px rgba(0,0,0,0.4),
+              inset 0 0 55px rgba(0,0,0,0.6),
+              -7px 0 5px -4px rgba(0,0,0,0.4),
+              7px 0 5px -4px rgba(0,0,0,0.4),
+              0 10px 5px -4px rgba(0,0,0,0.7),
+              0 -8px 7px -4px rgba(0,0,0,0.7);
+}
+
+span.eq span.eq-level:before,
+span.eq span.eq-level:after
+{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 2px;
+  display: inline-block;
+}
+
+span.eq span.eq-level:before
+{
+  top: 50%;
+  margin-top: -2px;
+  background: rgba(0,0,0,0.4);
+}
+
+span.eq span.eq-level:after
+{
+  top: 50%;
+  background: rgba(255,255,255,0.1);
+  box-shadow: 0 1px 3px rgba(255,255,255,0.01);
+}
+
+span.eq span.eq-level img
+{
+  position: absolute;
+  opacity: 0.2;
+}
+
+div.control-2 span.eq-1:after
+{
+  height: 50px;
+  margin-top: 30px;
+}
+
+div.control-2 span.eq-1 span.eq-level
+{
+  margin-top: 80px;
+}
+
+div.control-2 span.eq-2:after
+{
+  height: 0px;
+  margin-top: 0px;
+}
+
+div.control-2 span.eq-2 span.eq-level
+{
+  margin-top: 125px;
+}
+
+div.control-2 span.eq-3:after
+{
+  height: 120px;
+  margin-top: -40px;
+}
+
+div.control-2 span.eq-3 span.eq-level
+{
+  margin-top: 35px;
+}
+
+div.control-2 span.text-1
+{
+  position: absolute;
+  width: 100%;
+  display: inline-block;
+  top: 0;
+  margin-top: -25px;
+  text-align: center;
+  color: rgba(255,255,255,0.4);
+  font-size: 12px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0,0,0,1);
+}
+
+div.control-2 span.text-2
+{
+  position: absolute;
+  width: 100%;
+  display: inline-block;
+  bottom: 0;
+  margin-bottom: -25px;
+  text-align: center;
+  color: rgba(255,255,255,0.4);
+  font-size: 12px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0,0,0,1);
+}
+
+div.control-2:before
+{
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 1px;
+  display: inline-block;
+  background: rgba(0,0,0,0.8);
+  left: 0;
+  margin-left: -40px;
+  margin-top: 10px;
+
+  box-shadow: 0 1px 1px rgba(255,255,255,0.15),
+              0 60px 0 rgba(0,0,0,0.8),
+              0 61px 1px rgba(255,255,255,0.15),
+              0 120px 0 rgba(0,0,0,0.8),
+              0 121px 1px rgba(255,255,255,0.15),
+              0 180px 0 rgba(0,0,0,0.8),
+              0 181px 1px rgba(255,255,255,0.15),
+              100px 0px 0 rgba(0,0,0,0.8),
+              100px 1px 1px rgba(255,255,255,0.15),
+              100px 60px 0 rgba(0,0,0,0.8),
+              100px 61px 1px rgba(255,255,255,0.15),
+              100px 120px 0 rgba(0,0,0,0.8),
+              100px 121px 1px rgba(255,255,255,0.15),
+              100px 180px 0 rgba(0,0,0,0.8),
+              100px 181px 1px rgba(255,255,255,0.15),
+              190px 0px 0 rgba(0,0,0,0.8),
+              190px 1px 1px rgba(255,255,255,0.15),
+              190px 60px 0 rgba(0,0,0,0.8),
+              190px 61px 1px rgba(255,255,255,0.15),
+              190px 120px 0 rgba(0,0,0,0.8),
+              190px 121px 1px rgba(255,255,255,0.15),
+              190px 180px 0 rgba(0,0,0,0.8),
+              190px 181px 1px rgba(255,255,255,0.15),
+              280px 0px 0 rgba(0,0,0,0.8),
+              280px 1px 1px rgba(255,255,255,0.15),
+              280px 60px 0 rgba(0,0,0,0.8),
+              280px 61px 1px rgba(255,255,255,0.15),
+              280px 120px 0 rgba(0,0,0,0.8),
+              280px 121px 1px rgba(255,255,255,0.15),
+              280px 180px 0 rgba(0,0,0,0.8),
+              280px 181px 1px rgba(255,255,255,0.15);
+}
+
+div.control-3
+{
+  position: absolute;
+  display: inline;
+  margin-top: 70px;
+  margin-left: 65px;
+}
+
+div.control-3 div.play-pause
+{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: #2d2f3b;
+  border-radius: 100%;
+  box-shadow: 5px -2px 1px -3px rgba(255,255,255,0.35),
+              0 0 4px 3px rgba(0,0,0,0.7),
+              6px -1px 0px -2px rgba(0,0,0,0.3),
+              0 0 12px rgba(5,212,244,0.7);
+}
+
+div.control-3 div.play-pause:before
+{
+  position: absolute;
+  content: '';
+  width: 80px;
+  height: 80px;
+  display: inline-block;;
+  border-radius: 100%;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  
+  z-index: 0;
+  border: 10px solid #05d4f4;
+  border-right-color: transparent; 
+  transform: rotate(0deg);
+}
+
+div.play-pause span.button
+{
+  position: absolute;
+  width: 74px;
+  height: 74px;
+  display: inline-block;
+  background: #312f3a;
+  border-radius: 100%;
+  left: 50%;
+  top: 50%;
+  margin-top: -37px;
+  margin-left: -37px;
+  z-index: 10;
+  overflow: hidden;
+  text-align: center;
+  line-height: 74px;
+  font-size: 18px;
+  color: #05d4f4;
+
+  box-shadow: inset 0 0 85px rgba(0,0,0,0.2),
+              inset 0 4px 4px -2px rgba(255,255,255,0.4),
+              inset 0 -12px 10px -5px rgba(0,0,0,0.4),
+              0 0 2px 5px rgba(0,0,0,0.4),
+              8px 20px 15px rgba(0,0,0,0.7),
+              0px 20px 7px rgba(0,0,0,0.5);
+}
+
+div.play-pause span.button img
+{
+  position: absolute;
+  left: 0;
+  margin-left: -100px;
+  width: 300%;
+  height: 300%;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+div.play-pause span.slash
+{
+  font-weight: 900;
+}
+
+div.play-pause i
+{
+  position: relative;
+  text-shadow: 0px 0 10px rgba(5,212,244,0.7);
+  z-index: 2;
+}
+
+div.control-4
+{
+  position: absolute;
+  display: inline;
+  margin-left: 215px;
+  margin-top: 80px;
+}
+
+div.control-4 div.next-prev
+{
+  position: relative;
+  width: 220px;
+  height: 80px;
+  background: #000;
+  border-radius: 100px;
+  border: 1px solid #3f3e46;
+  box-shadow: 0 0 5px #3f3e46,
+              0 0 5px 1px rgba(0,0,0,1);
+}
+
+div.control-4 div.next-prev span
+{
+  position: relative;
+  width: 105px;
+  height: 70px;
+  display: inline-block;
+  background: #2d3039;
+  margin-top: 5px;
+  text-align: center;
+  line-height: 70px;
+  font-size: 28px;
+  color: #05d4f4;
+  text-shadow: 0px 0 10px rgba(5,212,244,0.7);
+  overflow: hidden;
+}
+
+div.next-prev span:nth-child(1)
+{
+  margin-left: 5px;
+  border-radius: 100px 0 0 100px;
+  box-shadow: inset 3px 4px 5px -2px rgba(255,255,255,0.3),
+              inset 2px -2px 2px 1px rgba(0,0,0,0.5),
+              inset 0 0 110px rgba(0,0,0,0.2);
+}
+
+div.next-prev span:nth-child(2)
+{
+  border-radius: 0 100px 100px 0;
+  box-shadow: inset 0.5px 1px 1px 2px rgba(0,0,0,0.5),
+              inset 0.5px -4px 0px -2px rgba(0,0,0,0.5);
+}
+
+
+div.next-prev span:before
+{
+  position: absolute;
+  content: '';
+  width: 25px;
+  height: 5px;
+  display: inline-block;
+  background: rgba(255,255,255,0.5);
+  margin-top: 32px;
+  filter: blur(2px);
+  border-radius: 100%;
+  box-shadow: 0 0 10px #fff;
+}
+
+div.next-prev span i.fa
+{
+  position: relative;
+  z-index: 2;
+}
+
+div.next-prev span img
+{
+  position: absolute;
+  width: 170%;
+  left: 0;
+  opacity: 0.25;
+  z-index: 1;
+}
+
+div.next-prev span:nth-child(2) img
+{
+  opacity: 0.5;
+}
